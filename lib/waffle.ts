@@ -37,6 +37,7 @@ export async function deployContract(
     ...factory.getDeployTransaction(...args)
   };
   const tx = await wallet.sendTransaction(deployTransaction);
+  await tx.wait();
   const receipt = await wallet.provider.getTransactionReceipt(tx.hash);
   return new Contract(receipt.contractAddress, abi, wallet);
 }
