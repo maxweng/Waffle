@@ -44,7 +44,7 @@ function compileNative(config) {
             var command, input;
             return __generator(this, function (_a) {
                 command = createBuildCommand(config);
-                input = JSON.stringify(buildUitls_1.buildInputObject(sources), null, 2);
+                input = JSON.stringify(buildUitls_1.buildInputObject(sources, config.compilerOptions), null, 2);
                 return [2 /*return*/, JSON.parse(child_process_1.execSync(command, { input: input }).toString())];
             });
         });

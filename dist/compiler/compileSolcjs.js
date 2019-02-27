@@ -65,7 +65,7 @@ function compileSolcjs(config) {
                     case 0: return [4 /*yield*/, loadCompiler(config)];
                     case 1:
                         solc = _a.sent();
-                        input = buildUitls_1.buildInputObject(sources);
+                        input = buildUitls_1.buildInputObject(sources, config.compilerOptions);
                         output = solc.compile(JSON.stringify(input), findImports);
                         return [2 /*return*/, JSON.parse(output)];
                 }

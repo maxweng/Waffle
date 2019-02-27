@@ -89,7 +89,6 @@ function deployContract(wallet, contractJSON, args, overrideOptions) {
                     return [4 /*yield*/, wallet.provider.getTransactionReceipt(tx.hash)];
                 case 3:
                     receipt = _a.sent();
-                    console.log({ receipt: receipt });
                     return [2 /*return*/, new ethers_1.Contract(receipt.contractAddress, abi, wallet)];
             }
         });
